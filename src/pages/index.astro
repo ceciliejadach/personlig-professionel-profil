@@ -1,16 +1,17 @@
 ---
-
+import BaseLayout from "../layouts/BaseLayout.astro";
+import HeroSection from "../components/HeroSection.astro";
+import ProfileSection from "../components/ProfileSection.astro";
+import Tools from "../components/Tools.astro";
+import CV from "../components/CV.astro";
+import Card from "../components/Card.astro";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Forside">
+  <HeroSection />
+  <Tools />
+  <ProfileSection text="Jeg søger en praktikplads, hvor jeg kan styrke mine kompetencer inden for HTML, CSS, JavaScript og frameworks som React." />
+  <CV />
+  <ProfileSection text="Jeg er nysgerrig og stræber altid efter at forbedre mine færdigheder." />
+  <Card />
+</BaseLayout>
