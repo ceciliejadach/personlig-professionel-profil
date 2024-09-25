@@ -1,0 +1,71 @@
+---
+import Button from "./Button.astro";
+
+const { img, text, buttontext, link, paragraph } = Astro.props;
+---
+
+<div class="card-wrapper">
+  <div class="card">
+    <img src={img} alt="" />
+    <div class="content">
+      <h1>{text}</h1>
+      <Button variant="secondary" text={buttontext} />
+      <p><strong>Løsning:</strong> <a href={link}>{paragraph}</a></p>
+    </div>
+  </div>
+</div>
+
+<style>
+  @layer components {
+    img {
+      border-radius: 10px;
+    }
+
+    .card-wrapper {
+      container-type: inline-size;
+      padding: 1rem;
+      grid-column: full;
+    }
+
+    .content {
+      display: grid;
+      gap: 1rem;
+      align-self: start;
+    }
+
+    .card:has(img) {
+      display: grid;
+      gap: 1rem;
+
+      @container (width > 600px) {
+        grid-template-columns: 3fr 2fr;
+
+        .card-wrapper {
+          display: grid;
+        }
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--white);
+      padding-right: 30px;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 0.7px;
+        background: var(--purple);
+        left: 0;
+        bottom: 0;
+        width: 0;
+        transition: width 0.2s;
+      }
+
+      &:hover:after {
+        width: 80%;
+      }
+    }
+  }
+</style>

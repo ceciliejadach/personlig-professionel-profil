@@ -5,8 +5,7 @@
 <section>
   <div>
     <h1>
-      Cecilie Jadach - Multimediedesign studerende med passion for frontend development.
-      <span> Baseret i København, men oprindeligt fra provinsen. </span>
+      Cecilie Jadach - Multimediedesign studerende med <span>passion for frontend development.</span>
     </h1>
   </div>
 </section>
@@ -14,10 +13,17 @@
 <style>
   @layer components {
     section {
-      padding: var(--section-padding);
+      height: 80svh;
       hyphens: auto;
-      span {
-        opacity: 60%;
+      display: grid;
+
+      div {
+        align-self: center;
+
+        span {
+          text-transform: uppercase;
+          opacity: 80%;
+        }
       }
     }
   }

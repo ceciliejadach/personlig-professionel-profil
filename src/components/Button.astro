@@ -37,11 +37,12 @@ const { text, variant, size } = Astro.props;
     }
 
     .secondary {
-      background:
+      /* background:
         linear-gradient(var(--black), var(--black)) padding-box,
-        linear-gradient(to right, darkblue, oklch(70% 0.5 290)) border-box;
+        linear-gradient(to right, darkblue, oklch(70% 0.5 290)) border-box; */
+      background: transparent;
       border-radius: 50em;
-      border: 1px solid transparent;
+      border: 1px solid var(--purple);
     }
 
     /* .secondary:hover {

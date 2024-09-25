@@ -4,6 +4,7 @@
 @import url("./overrides.css") layer(reset);
 
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @view-transition {
   navigation: auto;
@@ -15,9 +16,9 @@
     --fluid-18-24: clamp(1.125rem, 0.9946rem + 0.6522vw, 1.5rem);
     --body: 1rem;
 
-    --black: oklch(17.29% 0 0);
-    --white: oklch(100% 3.5594404384177905e-8 106.37411429114086);
-    --pale-yellow: oklch(96.65% 0.056 97.5);
+    --black: #101010;
+    --white: #fff;
+    --purple: #8685ef;
 
     font-family: "open sans";
     --font-weight-600: 600;
@@ -28,6 +29,8 @@
   h1 {
     font-size: var(--fluid-24-48);
     font-weight: var(--font-weight-600);
+    font-family: "kanit";
+    color: var(--purple);
   }
 
   h2 {
