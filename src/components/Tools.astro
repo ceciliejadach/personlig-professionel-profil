@@ -1,35 +1,58 @@
 ---
 import Button from "./Button.astro";
+import { Icon } from "astro-icon/components";
+import Flower from "./Flower.astro";
 ---
 
-<section>
-  <h2>Min værktøjskasse</h2>
-  <div>
-    <Button variant="secondary" text="HTML" />
-    <Button variant="secondary" text="CSS" />
-    <Button variant="secondary" text="Javascript" />
-    <Button variant="secondary" text="Astro" />
-    <Button variant="secondary" text="React" />
-    <Button variant="secondary" text="Next" />
-    <Button variant="secondary" text="GitHub" />
-    <Button variant="secondary" text="Netlify" />
-    <Button variant="secondary" text="Codepen" />
-    <Button variant="secondary" text="Figma" />
-    <Button variant="secondary" text="Adobe Illustrator" />
+<div class="wrapper">
+  <div class="container">
+    <h2>Min værktøjskasse</h2>
+    <div>
+      <Button variant="secondary" text="HTML" />
+      <Button variant="secondary" text="CSS" />
+      <Button variant="secondary" text="Javascript" />
+      <Button variant="secondary" text="Astro" />
+      <Button variant="secondary" text="React" />
+      <Button variant="secondary" text="Next" />
+      <Button variant="secondary" text="GitHub" />
+      <Button variant="secondary" text="Netlify" />
+      <Button variant="secondary" text="Codepen" />
+      <Button variant="secondary" text="Figma" />
+      <Button variant="secondary" text="Adobe Illustrator" />
+    </div>
   </div>
-</section>
+  <div class="flower-container">
+    <Flower />
+  </div>
+</div>
 
 <style>
   @layer componenets {
-    section {
+    .wrapper {
+      display: grid;
+      gap: 8rem;
+    }
+    .container {
       display: grid;
       gap: 1rem;
-      padding: var(--section-padding);
+      padding-block: rem;
 
       div {
         display: flex;
         flex-wrap: wrap;
         gap: 1rem;
+      }
+    }
+
+    @media (width > 600px) {
+      .wrapper {
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+        place-content: center;
+
+        .flower-container {
+          align-self: center;
+        }
       }
     }
   }

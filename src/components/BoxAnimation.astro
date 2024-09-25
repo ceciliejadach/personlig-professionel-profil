@@ -23,16 +23,19 @@
 
 <script>
   import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
   gsap.to(".boks", {
     scrollTrigger: {
       trigger: ".boks",
       start: "top center",
       end: "+=300",
-      //   toggleActions: "play pause reverse reverse",
+      //   toggleActions: "restart pause reverse reverse",
       scrub: 1,
     },
     rotation: 360,
-    x: 250,
-    duration: 5,
+    x: 300,
+    duration: 10,
   });
 </script>

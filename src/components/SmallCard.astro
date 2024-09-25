@@ -1,4 +1,98 @@
 ---
 import vildMad_1 from "../assets/images/vild-mad-1.png";
 import vildMad_2 from "../assets/images/vild-mad-2.png";
+import Button from "./Button.astro";
+const { text, buttontext, buttontextSecond, buttontextThird, link, paragraph } = Astro.props;
 ---
+
+<div>
+  <div class="card-wrapper">
+    <div class="card">
+      <figure>
+        <img src={vildMad_1.src} alt="" />
+        <img src={vildMad_2.src} alt="" />
+      </figure>
+      <div class="content">
+        <h1>{text}</h1>
+        <div>
+          <Button variant="secondary" text={buttontext} />
+          <Button variant="secondary" text={buttontextSecond} />
+          <Button variant="secondary" text={buttontextThird} />
+        </div>
+        <p><strong>Løsning:</strong> <a href={link}>{paragraph}</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+  @layer components {
+    img {
+      border-radius: 10px;
+      box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    }
+
+    .card-wrapper {
+      container-type: inline-size;
+      padding: 1rem;
+      grid-column: full;
+    }
+
+    .content {
+      display: grid;
+      gap: 1rem;
+      align-self: start;
+
+      div {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+
+    figure {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .card:has(img) {
+      display: grid;
+      gap: 1rem;
+
+      @container (width > 600px) {
+        grid-template-columns: 2fr 3fr;
+
+        .card-wrapper {
+          display: grid;
+        }
+
+        .content {
+          order: -1;
+        }
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--blue);
+      padding-right: 30px;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 0.7px;
+        background: var(--blue);
+        left: 0;
+        bottom: 0;
+        width: 0;
+        transition: width 0.2s;
+      }
+
+      &:hover:after {
+        width: 80%;
+      }
+    }
+  }
+</style>

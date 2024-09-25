@@ -1,5 +1,6 @@
 ---
 const { text } = Astro.props;
+import { Icon } from "astro-icon/components";
 ---
 
 <div class="quote-container">
@@ -25,21 +26,19 @@ const { text } = Astro.props;
 
 <script>
   import { gsap } from "gsap";
-
   import { ScrollTrigger } from "gsap/ScrollTrigger";
-
   gsap.registerPlugin(ScrollTrigger);
 
   gsap.to(".quote", {
-    duration: 4,
-    yPercent: -200,
-
     scrollTrigger: {
-      trigger: ".quote-container",
-      start: "-=500px",
-      end: "+=1000px",
-      // markers: true,
-      scrub: true,
+      trigger: ".quote",
+      start: "top center",
+      end: "+=300",
+      // toggleActions: "restart pause reverse reverse",
+      scrub: 1,
     },
+    // rotation: 360,
+    yPercent: -80,
+    duration: 5,
   });
 </script>

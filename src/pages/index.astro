@@ -8,14 +8,17 @@ import Card from "../components/Card.astro";
 import BigCard from "../components/BigCard.astro";
 import DBA from "../assets/images/dba-redesign.png";
 import BoxAnimation from "../components/BoxAnimation.astro";
+import SmallCard from "../components/SmallCard.astro";
 ---
 
 <BaseLayout title="Forside">
   <HeroSection />
-  <ProfileSection text="Jeg søger en praktikplads, hvor jeg kan styrke mine kompetencer inden for HTML, CSS, JavaScript og frameworks som React." />
+  <ProfileSection text="Jeg leder efter en praktikplads, hvor jeg kan styrke mine kompetencer inden for HTML, CSS, JavaScript og frameworks som React." />
   <Tools />
+
   <CV />
   <BoxAnimation />
   <!-- <Card /> -->
   <BigCard img={DBA.src} text="DBA Redesign" buttontext="Deveopler" link="https://dba-redesign.netlify.app" paragraph="DBA redesign" />
+  <SmallCard text="Vild Mad - Sanke app" buttontext="Digital Designer" buttontextSecond="UX Designer" buttontextThird="Deveopler" />
 </BaseLayout>
