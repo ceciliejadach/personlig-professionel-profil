@@ -1,0 +1,57 @@
+---
+import "../styles/global.css";
+
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+
+const { title = "Cecilie Jadach" } = Astro.props;
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+
+    <title>{title} - Personlig Professionel Profil</title>
+  </head>
+  <body>
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>
+
+<style>
+  @layer global {
+    body {
+      background-color: var(--black);
+      color: var(--white);
+      --content-width: min(110ch, 100%);
+
+      display: grid;
+      grid-template-columns:
+        [full-start] minmax(1rem, 1fr)
+        [content-start] minmax(0, calc(var(--content-width) / 2)) minmax(0, calc(var(--content-width) / 2)) [content-end]
+        minmax(1rem, 1fr) [full-end];
+      grid-template-rows: auto 1fr auto;
+      column-gap: 0;
+      align-content: start;
+      height: 100vh;
+
+      > * {
+        grid-column: full;
+        display: grid;
+        grid-template-columns: subgrid;
+        align-content: start;
+
+        > * {
+          grid-column: content;
+        }
+      }
+    }
+  }
+</style>

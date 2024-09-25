@@ -1,0 +1,41 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section>
+  <div>
+    <h2>Cecilie Jadach</h2>
+    <div>
+      <a href="https://github.com/ceciliejadach"><Icon name="github" /></a>
+      <a href="https://www.linkedin.com/in/cecilie-jadach-petersen-0671b7276/"><Icon name="linkedin" /></a>
+    </div>
+  </div>
+</section>
+
+<style>
+  [data-icon] {
+    width: 30px;
+    height: 30px;
+
+    a:hover & path {
+      fill: var(--pale-yellow);
+    }
+  }
+  @layer components {
+    section {
+      padding: 1rem;
+      position: sticky;
+
+      :first-child {
+        display: flex;
+        justify-content: space-between;
+
+        div {
+          display: inherit;
+          justify-content: space-evenly;
+          gap: 1rem;
+        }
+      }
+    }
+  }
+</style>

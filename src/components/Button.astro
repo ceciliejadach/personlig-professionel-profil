@@ -1,0 +1,60 @@
+---
+const { text, variant, size } = Astro.props;
+---
+
+<!-- <a href={url}> -->
+<button class={variant + " " + size}>
+  <p>{text}</p>
+</button>
+<!-- </a> -->
+
+<style>
+  @layer components {
+    button {
+      padding: 8px 18px;
+      border-radius: 42px;
+      transition:
+        background-color 0.2s,
+        color 0.2s;
+      font-size: var(--body);
+      outline: none;
+      border: none;
+      cursor: pointer;
+      white-space: nowrap;
+      width: fit-content;
+    }
+
+    .primary {
+      background: var(--pale-yellow);
+      color: var(--black);
+
+      &:hover {
+        background: oklch(from var(--pale-yellow) calc(l - 0.05) c h);
+      }
+      &:active {
+        background: oklch(from var(--pale-yellow) calc(l - 0.1) c h);
+      }
+    }
+
+    .secondary {
+      background:
+        linear-gradient(var(--black), var(--black)) padding-box,
+        linear-gradient(to right, darkblue, oklch(70% 0.5 290)) border-box;
+      border-radius: 50em;
+      border: 1px solid transparent;
+    }
+
+    /* .secondary:hover {
+      background-color: var(--pale-yellow);
+      color: var(--black);
+    } */
+
+    .tertiary {
+      background:
+        linear-gradient(oklch(from var(--black) calc(l + 0.1) c h), oklch(from var(--black) calc(l + 0.1) c h)) padding-box,
+        linear-gradient(to right, darkblue, oklch(70% 0.5 290)) border-box;
+      border-radius: 50em;
+      border: 1px solid transparent;
+    }
+  }
+</style>

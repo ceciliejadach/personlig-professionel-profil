@@ -1,0 +1,36 @@
+---
+import Button from "./Button.astro";
+---
+
+<section>
+  <h2>Min værktøjskasse</h2>
+  <div>
+    <Button variant="secondary" text="HTML" />
+    <Button variant="secondary" text="CSS" />
+    <Button variant="secondary" text="Javascript" />
+    <Button variant="secondary" text="Astro" />
+    <Button variant="secondary" text="React" />
+    <Button variant="secondary" text="Next" />
+    <Button variant="secondary" text="GitHub" />
+    <Button variant="secondary" text="Netlify" />
+    <Button variant="secondary" text="Codepen" />
+    <Button variant="secondary" text="Figma" />
+    <Button variant="secondary" text="Adobe Illustrator" />
+  </div>
+</section>
+
+<style>
+  @layer componenets {
+    section {
+      display: grid;
+      gap: 1rem;
+      padding: var(--section-padding);
+
+      div {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+      }
+    }
+  }
+</style>
