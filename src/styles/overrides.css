@@ -1,0 +1,34 @@
+.flow {
+  > * + * {
+    margin-top: var(--flow-space, 0.5rlh);
+  }
+
+  ul {
+    padding: 1rem;
+
+    li {
+      margin-top: 1em;
+    }
+  }
+
+  h3 {
+    --flow-space: 4em;
+  }
+
+  h3 + * {
+    --flow-space: 0.25rlh;
+  }
+
+  h5 {
+    --flow-space: 1em;
+  }
+
+  p {
+    --flow-space: 1.5em;
+  }
+
+  img {
+    border-radius: 20px;
+    --flow-space: 2em;
+  }
+}

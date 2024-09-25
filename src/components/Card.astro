@@ -2,82 +2,35 @@
 import Button from "./Button.astro";
 ---
 
-<h1>Projekter</h1>
-<div class="container">
-  <div class="spacer"></div>
-  <div class="card">
-    <div class="bottom-div">
-      <h2>Redesign af DBA</h2>
-      <Button variant="tertiary" text="Developer" />
-      <p>Løsning: <a href="https://dba-redesign.netlify.app/ ">DBA Redesign</a></p>
-    </div>
-  </div>
-  <div class="card">
-    <div class="bottom-div">
-      <h2>Interview af Frederik Stadager</h2>
-      <div class="flex">
-        <Button variant="tertiary" text="Videograf" />
-        <Button variant="tertiary" text="Adobe Premiere Pro" />
-      </div>
-    </div>
-  </div>
+<section>
   <div class="card"></div>
   <div class="card"></div>
-  <div class="spacer"></div>
-</div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+  <div class="card"></div>
+</section>
 
 <style>
   @layer components {
-    .container {
-      grid-column: full;
-      .card {
-        :has(> &) {
-          display: grid;
-          grid: auto;
-          gap: clamp(4rem, 0.9783rem + 2.6087vw, 1.5rem);
-          overflow-x: clip;
-        }
-
-        width: min(350px, 100%);
-        aspect-ratio: 0.75;
-        border-radius: 8px;
-        background: oklch(from var(--black) calc(l + 0.1) c h);
-        animation: --move linear both;
-        animation-timeline: view();
-        margin-top: -15%;
-        display: flex;
-        flex-direction: column;
-
-        a {
-          text-decoration: none;
-          color: var(--white);
-          cursor: pointer;
-
-          & :hover {
-            text-decoration: underline;
-          }
-        }
-      }
-      .bottom-div {
-        margin-top: auto;
-        padding: 1rem;
+    .card {
+      :has(> &) {
         display: grid;
-        gap: 1rem;
-
-        & > * {
-          align-self: start;
-        }
+        grid: auto;
+        gap: 2rem;
+        overflow-x: clip;
       }
 
-      .flex {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 1rem;
-      }
-    }
-
-    .spacer {
-      height: 20svh;
+      width: min(300px, 100%);
+      aspect-ratio: 0.75;
+      border-radius: 8px;
+      background: red;
+      animation: --move linear both;
+      animation-timeline: view();
+      margin-top: -15%;
     }
 
     @keyframes --move {
@@ -103,12 +56,14 @@ import Button from "./Button.astro";
         scale: 0.6;
       }
     }
-    @media (width > 600px) {
-      .container {
-        .card {
-          width: min(500px, 100%);
-        }
-      }
+
+    body {
+      /* display: flow-root;
+      min-height: 100svh;
+      font-family: system-ui, sans-serif;
+      display: grid;
+      align-items: start;
+      gap: 80svh; */
     }
   }
 </style>
