@@ -16,6 +16,12 @@ import Button from "./Button.astro";
 
 <style>
   @layer components {
+    display: flow-root;
+    min-height: 100svh;
+    font-family: system-ui, sans-serif;
+    display: grid;
+    align-items: start;
+    gap: 80svh;
     .card {
       /* Brug :has() som normalt */
       :has(> &) {
@@ -31,13 +37,6 @@ import Button from "./Button.astro";
       background: red;
       animation: --move linear both;
       margin-top: -15%;
-    }
-
-    /* @supports bruges her for kun at tilføje animation-timeline på browsere, der understøtter det */
-    @supports (animation-timeline: view()) {
-      .card {
-        animation-timeline: view();
-      }
     }
 
     @keyframes --move {
