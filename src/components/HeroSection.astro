@@ -13,9 +13,8 @@
 <style>
   @layer components {
     section {
-      height: 80svh;
       hyphens: auto;
-      display: grid;
+      padding-block: 5rem;
 
       div {
         align-self: center;
@@ -24,6 +23,12 @@
           text-transform: uppercase;
           opacity: 80%;
         }
+      }
+    }
+
+    @media (width > 600px) {
+      section {
+        padding-block-start: 20rem;
       }
     }
   }

@@ -1,0 +1,38 @@
+---
+
+---
+
+<div class="container">
+  <div class="boks"></div>
+</div>
+
+<style>
+  @layer components {
+    .container {
+      padding-block-end: 4rem;
+    }
+    .boks {
+      display: block;
+      background: var(--blue);
+      height: 100px;
+      width: 100px;
+      border-radius: 20px;
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  gsap.to(".boks", {
+    scrollTrigger: {
+      trigger: ".boks",
+      start: "top center",
+      end: "+=300",
+      //   toggleActions: "play pause reverse reverse",
+      scrub: 1,
+    },
+    rotation: 360,
+    x: 250,
+    duration: 5,
+  });
+</script>

@@ -2,53 +2,44 @@
 const { text } = Astro.props;
 ---
 
-<section>
-  <blockquote>
-    <h1><span>{text} </span></h1>
-  </blockquote>
-</section>
+<div class="quote-container">
+  <h2 class="quote">{text}</h2>
+</div>
 
 <style>
   @layer components {
-    @property --p {
-      syntax: "<percentage>";
-      inherits: true;
-      initial-value: 0%;
+    .quote-container {
+      padding-block: 3rem;
+    }
+    .quote {
+      text-transform: uppercase;
     }
 
-    blockquote {
-      view-timeline: --bq;
-      block-size: 80vh;
-      position: relative;
-      animation: p linear both;
-      animation-timeline: --bq;
-      animation-range: entry 70% exit 10%;
-
-      max-width: 120ch;
-
-      h1 {
-        position: sticky;
-        top: 0;
-        line-height: 1.25;
-        min-block-size: 50vh;
-        font-size: 2rem;
-        align-content: center;
-        animation: p ease-in both;
-        animation-timeline: --bq;
-        animation-range: entry 60% contain 100%;
-
-        span {
-          display: inline;
-          background: linear-gradient(90deg in oklab, oklch(0.58 0.32 305.49) 0, oklch(0.64 0.33 318.52) var(--p), oklch(90% 0 0) 0) 0 50% / 100% auto text;
-          color: #0000;
-        }
-      }
-    }
-
-    @keyframes p {
-      to {
-        --p: 100%;
+    @media (width > 600px) {
+      .quote-container {
+        grid-column: 3/4;
       }
     }
   }
 </style>
+
+<script>
+  import { gsap } from "gsap";
+
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to(".quote", {
+    duration: 4,
+    yPercent: -200,
+
+    scrollTrigger: {
+      trigger: ".quote-container",
+      start: "-=500px",
+      end: "+=1000px",
+      // markers: true,
+      scrub: true,
+    },
+  });
+</script>

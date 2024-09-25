@@ -18,7 +18,7 @@ import { Icon } from "astro-icon/components";
     height: 30px;
 
     a:hover & path {
-      fill: var(--pale-yellow);
+      fill: oklch(from var(--blue) calc(l - 0.1) c h);
     }
   }
   @layer components {

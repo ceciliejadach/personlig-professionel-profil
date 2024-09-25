@@ -7,13 +7,15 @@ import CV from "../components/CV.astro";
 import Card from "../components/Card.astro";
 import BigCard from "../components/BigCard.astro";
 import DBA from "../assets/images/dba-redesign.png";
+import BoxAnimation from "../components/BoxAnimation.astro";
 ---
 
 <BaseLayout title="Forside">
   <HeroSection />
-  <Tools />
   <ProfileSection text="Jeg søger en praktikplads, hvor jeg kan styrke mine kompetencer inden for HTML, CSS, JavaScript og frameworks som React." />
+  <Tools />
   <CV />
+  <BoxAnimation />
   <!-- <Card /> -->
   <BigCard img={DBA.src} text="DBA Redesign" buttontext="Deveopler" link="https://dba-redesign.netlify.app" paragraph="DBA redesign" />
 </BaseLayout>
