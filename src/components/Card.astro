@@ -3,27 +3,22 @@ import Button from "./Button.astro";
 ---
 
 <section>
-  <div class="card"></div>
-  <div class="card"></div>
-  <div class="card"></div>
-  <div class="card"></div>
-  <div class="card"></div>
-  <div class="card"></div>
-  <div class="card"></div>
-  <div class="card"></div>
-  <div class="card"></div>
+  <div class="full-bleed">
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+    <div class="card"></div>
+  </div>
 </section>
 
 <style>
   @layer components {
-    display: flow-root;
-    min-height: 100svh;
-    font-family: system-ui, sans-serif;
-    display: grid;
-    align-items: start;
-    gap: 80svh;
     .card {
-      /* Brug :has() som normalt */
       :has(> &) {
         display: grid;
         grid: auto;
@@ -36,6 +31,7 @@ import Button from "./Button.astro";
       border-radius: 8px;
       background: red;
       animation: --move linear both;
+      animation-timeline: view();
       margin-top: -15%;
     }
 
@@ -65,4 +61,4 @@ import Button from "./Button.astro";
   }
 </style>
 
-<script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"></script>
+<script></script>
