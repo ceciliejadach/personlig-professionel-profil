@@ -1,0 +1,58 @@
+---
+import { Icon } from "astro-icon/components";
+---
+
+<section>
+  <h1 class="text">Er vi et match?</h1>
+  <div>
+    <h2>E-mail: Jadach95@hotmail.com</h2>
+    <div>
+      <a href="https://github.com/ceciliejadach"><Icon name="github_wh" /></a>
+      <a href="https://www.linkedin.com/in/cecilie-jadach-petersen-0671b7276/"><Icon name="linkedin_wh" /></a>
+    </div>
+  </div>
+</section>
+
+<style>
+  [data-icon] {
+    width: 30px;
+    height: 30px;
+
+    & {
+      fill: var(--white);
+    }
+  }
+  @layer components {
+    h1 {
+      padding: 5rem 0;
+      text-align: center;
+    }
+
+    div {
+      grid-column: content;
+
+      & > div {
+        display: flex;
+      }
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  gsap.to(".text", {
+    scrollTrigger: {
+      trigger: ".text",
+      start: "top center",
+      end: "+=300",
+
+      scrub: 1,
+    },
+
+    yPercent: -100,
+    duration: 5,
+  });
+</script>
