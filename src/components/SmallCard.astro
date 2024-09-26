@@ -39,10 +39,12 @@ const { text, link, paragraph } = Astro.props;
       border-radius: 10px;
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
-
+    .container {
+      padding-block: 2rem;
+    }
     .card-wrapper {
       container-type: inline-size;
-      padding: 1rem;
+      /* padding: 1rem; */
       grid-column: full;
     }
 
@@ -79,7 +81,7 @@ const { text, link, paragraph } = Astro.props;
 
     .card:has(img) {
       display: grid;
-      gap: 3rem;
+      gap: 1rem;
 
       @container (width > 600px) {
         grid-template-columns: 3fr 2fr;
@@ -118,7 +120,11 @@ const { text, link, paragraph } = Astro.props;
 
     @media (width > 600px) {
       .container {
-        padding-block: 10rem;
+        padding-block: 8rem;
+      }
+
+      .card:has(img) {
+        gap: 3rem;
       }
     }
   }

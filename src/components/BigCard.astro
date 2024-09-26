@@ -22,7 +22,7 @@ const { img, text, buttontext, link, paragraph } = Astro.props;
 
     .card-wrapper {
       container-type: inline-size;
-      padding-block: 4rem;
+      padding-block: 2rem;
       /* grid-column: full; */
     }
 
@@ -34,7 +34,7 @@ const { img, text, buttontext, link, paragraph } = Astro.props;
 
     .card:has(img) {
       display: grid;
-      gap: 3rem;
+      gap: 1rem;
 
       @container (width > 600px) {
         grid-template-columns: 3fr 1fr;
@@ -69,7 +69,11 @@ const { img, text, buttontext, link, paragraph } = Astro.props;
 
     @media (width > 600px) {
       .container {
-        padding-block: 10rem;
+        padding-block: 8rem;
+      }
+
+      .card:has(img) {
+        gap: 3rem;
       }
     }
   }
