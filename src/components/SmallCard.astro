@@ -5,7 +5,7 @@ import vildMad_2 from "../assets/images/vild-mad-2.png";
 const { text, link, paragraph } = Astro.props;
 ---
 
-<div>
+<div class="container">
   <div class="card-wrapper">
     <div class="card">
       <figure>
@@ -113,6 +113,12 @@ const { text, link, paragraph } = Astro.props;
 
       &:hover:after {
         width: 80%;
+      }
+    }
+
+    @media (width > 600px) {
+      .container {
+        padding-block: 10rem;
       }
     }
   }

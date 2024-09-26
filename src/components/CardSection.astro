@@ -6,13 +6,13 @@ import BigCard from "../components/BigCard.astro";
 ---
 
 <div class="wrapper">
-  <div class="card">
+  <div>
     <BigCard img={DBA.src} text="DBA - Redesign" buttontext="Deveopler" link="https://dba-redesign.netlify.app" paragraph="DBA redesign" />
   </div>
-  <div class="card">
+  <div>
     <MediumCard text="I Tråd Med Verden - Webfeature" link="https://itmv-projekt.netlify.app" paragraph="Webfeature" />
   </div>
-  <div class="card">
+  <div>
     <SmallCard text="Vild Mad - Sanke app" buttontext="Digital Designer" buttontextSecond="UX Designer" buttontextThird="Deveopler" link="https://www.figma.com/design/UG3ISjU0LuEENJSu2VUa8q/VILD-MAD" paragraph="Figma Prototype" />
   </div>
 </div>
@@ -26,8 +26,7 @@ import BigCard from "../components/BigCard.astro";
     .wrapper {
       scroll-snap-type: y mandatory;
     }
-
-    .card {
+    .wrapper > div {
       scroll-snap-align: center;
       scroll-snap-stop: always;
     }
