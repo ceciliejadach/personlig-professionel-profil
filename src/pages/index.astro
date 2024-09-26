@@ -4,23 +4,15 @@ import HeroSection from "../components/HeroSection.astro";
 import ProfileSection from "../components/ProfileSection.astro";
 import Tools from "../components/Tools.astro";
 import CV from "../components/CV.astro";
-import Card from "../components/Card.astro";
-import BigCard from "../components/BigCard.astro";
-import DBA from "../assets/images/dba-redesign.png";
 import BoxAnimation from "../components/BoxAnimation.astro";
-import SmallCard from "../components/SmallCard.astro";
-import MediumCard from "../components/MediumCard.astro";
+import CardSection from "../components/CardSection.astro";
 ---
 
 <BaseLayout title="Forside">
   <HeroSection />
   <ProfileSection text="Jeg leder efter en praktikplads, hvor jeg kan styrke mine kompetencer inden for HTML, CSS, JavaScript og frameworks som React." />
   <Tools />
-
-  <CV />
   <BoxAnimation />
-  <!-- <Card /> -->
-  <BigCard img={DBA.src} text="DBA - Redesign" buttontext="Deveopler" link="https://dba-redesign.netlify.app" paragraph="DBA redesign" />
-  <MediumCard text="I Tråd Med Verden - Webfeature" link="https://itmv-projekt.netlify.app" paragraph="Webfeature" />
-  <SmallCard text="Vild Mad - Sanke app" buttontext="Digital Designer" buttontextSecond="UX Designer" buttontextThird="Deveopler" link="https://www.figma.com/design/UG3ISjU0LuEENJSu2VUa8q/VILD-MAD" paragraph="Figma Prototype" />
+  <CardSection />
+  <CV />
 </BaseLayout>
