@@ -1,7 +1,6 @@
 ---
-import vildMad_1 from "../assets/images/vild-mad-1.png";
-import vildMad_2 from "../assets/images/vild-mad-2.png";
-
+import { Icon } from "astro-icon/components";
+import ITMV from "../assets/images/itmv.png";
 const { text, link, paragraph } = Astro.props;
 ---
 
@@ -9,8 +8,7 @@ const { text, link, paragraph } = Astro.props;
   <div class="card-wrapper">
     <div class="card">
       <figure>
-        <img src={vildMad_1.src} alt="" />
-        <img src={vildMad_2.src} alt="" />
+        <img src={ITMV.src} alt="" />
       </figure>
       <div class="content">
         <h1>{text}</h1>
@@ -18,7 +16,7 @@ const { text, link, paragraph } = Astro.props;
           <ul>
             <li>&#8594 Developer</li>
             <li>&#8594 Digital Designer</li>
-            <li>&#8594 UX Designer</li>
+            <li>&#8594 Illustrator</li>
           </ul>
         </div>
         <p><strong>Løsning:</strong> <a href={link}>{paragraph}</a></p>
@@ -60,20 +58,15 @@ const { text, link, paragraph } = Astro.props;
 
     figure {
       display: grid;
-      grid-template-columns: 1fr 1fr;
       gap: 1rem;
       position: relative;
 
       &::before {
-        content: "";
+        content: url(/src/icons/sytråd.svg);
         position: absolute;
-        width: 150px;
-        height: 300px;
-        border-radius: 10px;
-        border: 2px dashed var(--blue);
-        top: -2%;
-        left: -2%;
-        z-index: -10;
+        bottom: -50%;
+        right: -10%;
+        z-index: 10;
       }
     }
 
@@ -82,14 +75,14 @@ const { text, link, paragraph } = Astro.props;
       gap: 1rem;
 
       @container (width > 600px) {
-        grid-template-columns: 3fr 2fr;
+        grid-template-columns: 1fr 3fr;
 
         .card-wrapper {
           display: grid;
         }
 
         .content {
-          /* order: -1; */
+          order: -1;
         }
       }
     }
@@ -112,7 +105,15 @@ const { text, link, paragraph } = Astro.props;
       }
 
       &:hover:after {
-        width: 80%;
+        width: 100%;
+      }
+    }
+
+    @media (width > 500px) {
+      figure {
+        &::before {
+          bottom: -5%;
+        }
       }
     }
   }
