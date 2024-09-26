@@ -8,7 +8,15 @@
     <div class="box">
       <p>2024-nu</p>
       <div class="content">
-        <h2>Personlig Assistent</h2>
+        <h3>Tutor</h3>
+        <span>KEA - Københavns Erhvervsakademi</span>
+        <p>Tutor for multimediedesignstuderende</p>
+      </div>
+    </div>
+    <div class="box">
+      <p>2024-nu</p>
+      <div class="content">
+        <h3>Personlig Assistent</h3>
         <span>Alm. Brand</span>
         <p>PA for Sunsetting Specialist. Opdatering og registering af applikationer i Excel samt udvikling af Confluence side for ALM (Application Life Mangement) og Architecture and Technology.</p>
       </div>
@@ -16,18 +24,17 @@
     <div class="box">
       <p>2023-2023</p>
       <div class="content">
-        <h2>UX/UI-konsulent</h2>
+        <h3>UX/UI-konsulent</h3>
         <span>Blomster og Cocktails</span>
-        <p>Udarbejdelse af user personas og userflow diagram. Udarbejdelse af visuelt æstetiske wireframes og funktionelle interaktive prototyper i Figma i forbindelse med demonstration af userflow. Vejledning og rådgivning i relevante features for målgruppe samt hvorvidt features er mulige for kunden at vedligeholde.</p>
+        <p>Udarbejdelse af user personas, userflow diagram, visuelt æstetiske wireframes og funktionelle interaktive prototyper i Figma. Vejledning og rådgivning i relevante features.</p>
       </div>
     </div>
 
     <div class="box">
       <p>2021-2023</p>
       <div class="content">
-        <h2>Fysioterapeut</h2>
+        <h3>Fysioterapeut</h3>
         <span>Center for Genoptræning Vanløse</span>
-        <p>Fungeret som almen praktiserende fysioterapeut. Erfaring med ortopædkirurgiske og præoperative diagnoser og problematikker i underekstremiteten.</p>
       </div>
     </div>
   </div>
@@ -37,14 +44,14 @@
     <div class="box">
       <p>2023-2025</p>
       <div class="content">
-        <h2>Multimediedesigner</h2>
+        <h3>Multimediedesigner</h3>
         <span>KEA - Københavns Erhvervsakademi</span>
       </div>
     </div>
     <div class="box">
       <p>2018-2021</p>
       <div class="content">
-        <h2>Bachelor i Fysioterapi</h2>
+        <h3>Bachelor i Fysioterapi</h3>
         <span>Københavns Professionshøjskole</span>
       </div>
     </div>
@@ -53,7 +60,7 @@
   <style>
     @layer components {
       section {
-        padding-block-start: 8rem;
+        padding-block: 8rem 3rem;
       }
       .container {
         display: grid;
@@ -65,11 +72,22 @@
         grid-template-columns: 0.5fr 1fr;
         gap: 1rem;
 
-        h2 {
+        h3 {
           font-weight: 600;
         }
         p {
           opacity: 80%;
+        }
+
+        span {
+          font-weight: 600;
+          font-size: 1rem;
+        }
+      }
+
+      @media (width > 600px) {
+        section {
+          padding-block-start: 0rem;
         }
       }
     }

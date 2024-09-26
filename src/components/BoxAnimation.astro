@@ -3,39 +3,60 @@
 ---
 
 <div class="container">
-  <div class="boks"></div>
+  <div class="boks">
+    <h2>Mine projekter</h2>
+  </div>
 </div>
 
 <style>
   @layer components {
     .container {
-      padding-block-end: 4rem;
+      /* padding-block-end: 4rem; */
+      /* padding-inline-start: 1rem;
+      grid-column: full; */
     }
     .boks {
-      display: block;
+      /* display: block;
       background: var(--blue);
       height: 100px;
       width: 100px;
-      border-radius: 20px;
+      border-radius: 20px; */
     }
   }
 </style>
 
-<script>
+<!-- <script>
   import { gsap } from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
   gsap.registerPlugin(ScrollTrigger);
+
+  let mm = gsap.matchMedia();
 
   gsap.to(".boks", {
     scrollTrigger: {
       trigger: ".boks",
       start: "top center",
       end: "+=300",
-      //   toggleActions: "restart pause reverse reverse",
+      toggleActions: "restart pause reverse reverse",
       scrub: 1,
     },
     rotation: 360,
-    x: 200,
+    x: "0",
     duration: 10,
   });
-</script>
+
+  mm.add("(width > 600px", () => {
+    gsap.to(".boks", {
+      scrollTrigger: {
+        trigger: ".boks",
+        start: "top center",
+        end: "+=300",
+        toggleActions: "restart pause reverse reverse",
+        scrub: 1,
+      },
+      rotation: 360,
+      x: "20vw",
+      duration: 10,
+    });
+  });
+</script> -->

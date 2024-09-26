@@ -1,8 +1,8 @@
 ---
 import vildMad_1 from "../assets/images/vild-mad-1.png";
 import vildMad_2 from "../assets/images/vild-mad-2.png";
-import Button from "./Button.astro";
-const { text, buttontext, buttontextSecond, buttontextThird, link, paragraph } = Astro.props;
+
+const { text, link, paragraph } = Astro.props;
 ---
 
 <div>
@@ -15,9 +15,11 @@ const { text, buttontext, buttontextSecond, buttontextThird, link, paragraph } =
       <div class="content">
         <h1>{text}</h1>
         <div>
-          <Button variant="secondary" text={buttontext} />
-          <Button variant="secondary" text={buttontextSecond} />
-          <Button variant="secondary" text={buttontextThird} />
+          <ul>
+            <li>&#8594 Developer</li>
+            <li>&#8594 Digital Designer</li>
+            <li>&#8594 UX Designer</li>
+          </ul>
         </div>
         <p><strong>Løsning:</strong> <a href={link}>{paragraph}</a></p>
       </div>
@@ -27,6 +29,12 @@ const { text, buttontext, buttontextSecond, buttontextThird, link, paragraph } =
 
 <style>
   @layer components {
+    ul {
+      padding: 0;
+      li {
+        list-style: none;
+      }
+    }
     img {
       border-radius: 10px;
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;

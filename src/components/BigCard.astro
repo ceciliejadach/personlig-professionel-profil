@@ -1,6 +1,4 @@
 ---
-import Button from "./Button.astro";
-
 const { img, text, buttontext, link, paragraph } = Astro.props;
 ---
 
@@ -9,7 +7,7 @@ const { img, text, buttontext, link, paragraph } = Astro.props;
     <img src={img} alt="" />
     <div class="content">
       <h1>{text}</h1>
-      <Button variant="secondary" text={buttontext} />
+      <p>&#8594 Deveopler</p>
       <p><strong>Løsning:</strong> <a href={link}>{paragraph}</a></p>
     </div>
   </div>
@@ -24,8 +22,8 @@ const { img, text, buttontext, link, paragraph } = Astro.props;
 
     .card-wrapper {
       container-type: inline-size;
-      padding: 1rem;
-      grid-column: full;
+      padding-block: 4rem;
+      /* grid-column: full; */
     }
 
     .content {
@@ -39,7 +37,7 @@ const { img, text, buttontext, link, paragraph } = Astro.props;
       gap: 1rem;
 
       @container (width > 600px) {
-        grid-template-columns: 3fr 2fr;
+        grid-template-columns: 3fr 1fr;
 
         .card-wrapper {
           display: grid;

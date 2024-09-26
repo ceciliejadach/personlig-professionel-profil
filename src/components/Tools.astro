@@ -14,6 +14,7 @@ import Flower from "./Flower.astro";
       <Button variant="secondary" text="Astro" />
       <Button variant="secondary" text="React" />
       <Button variant="secondary" text="Next" />
+      <Button variant="secondary" text="GSAP" />
       <Button variant="secondary" text="GitHub" />
       <Button variant="secondary" text="Netlify" />
       <Button variant="secondary" text="Codepen" />
@@ -30,12 +31,12 @@ import Flower from "./Flower.astro";
   @layer componenets {
     .wrapper {
       display: grid;
-      gap: 8rem;
+      gap: 5rem;
     }
     .container {
       display: grid;
       gap: 1rem;
-      padding-block: rem;
+      padding-block: 4rem;
 
       div {
         display: flex;
@@ -53,6 +54,10 @@ import Flower from "./Flower.astro";
         .flower-container {
           align-self: center;
         }
+      }
+
+      .container {
+        padding-block: 10rem;
       }
     }
   }
