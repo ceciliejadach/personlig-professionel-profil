@@ -65,11 +65,12 @@ const { text, link, paragraph } = Astro.props;
       position: relative;
 
       &::before {
-        content: url("/public/image/sytråd.svg");
+        content: "";
         position: absolute;
         bottom: -50%;
         right: -10%;
         z-index: 10;
+        max-width: 5px;
       }
     }
 
