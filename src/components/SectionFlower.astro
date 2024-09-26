@@ -1,0 +1,24 @@
+---
+import Flower from "./Flower.astro";
+---
+
+<div class="wrapper">
+  <Flower />
+  <div></div>
+</div>
+
+<style>
+  @layer components {
+    .wrapper {
+      display: grid;
+      grid-column: full;
+    }
+
+    @media (width > 600px) {
+      .wrapper {
+        padding-block: 5rem;
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+</style>
