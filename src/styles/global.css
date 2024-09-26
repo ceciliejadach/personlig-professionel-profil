@@ -14,7 +14,8 @@
 @layer global {
   html {
     /* --fluid-24-48: clamp(1.5rem, 0.9783rem + 2.6087vw, 3rem); */
-    --fluid-24-52: clamp(1.5rem, 0.8913rem + 3.0435vw, 3.25rem);
+    /* --fluid-24-52: clamp(1.5rem, 0.8913rem + 3.0435vw, 3.25rem); */
+    --fluid-36-72: clamp(2.25rem, 1.4674rem + 3.913vw, 4.5rem);
     --fluid-24-36: clamp(1.5rem, 1.2391rem + 1.3043vw, 2.25rem);
     --fluid-18-24: clamp(1.125rem, 0.9946rem + 0.6522vw, 1.5rem);
     --body: 1rem;
@@ -29,7 +30,7 @@
   }
 
   h1 {
-    font-size: var(--fluid-24-52);
+    font-size: var(--fluid-36-72);
     font-weight: var(--font-weight-600);
     font-family: "playfair display";
     color: var(--blue);
