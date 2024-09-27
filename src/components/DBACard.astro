@@ -4,7 +4,9 @@ import DBA from "../assets/images/dba-redesign.png";
 
 <div class="card-wrapper">
   <div class="card">
-    <img src={DBA.src} alt="" />
+    <figure>
+      <img src={DBA.src} alt="" />
+    </figure>
     <div class="content">
       <h1>DBA - Redesign</h1>
       <ul>
@@ -29,9 +31,25 @@ import DBA from "../assets/images/dba-redesign.png";
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
     }
 
+    figure {
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        width: 300px;
+        height: 300px;
+        border-radius: 10px;
+        border: 2px dashed var(--blue);
+        bottom: -2%;
+        right: -2%;
+        z-index: -10;
+      }
+    }
+
     .card-wrapper {
       container-type: inline-size;
-      padding-block: 2rem;
+      padding-block: 3rem;
       /* grid-column: full; */
     }
 
