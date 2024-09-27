@@ -7,7 +7,9 @@ import DBA from "../assets/images/dba-redesign.png";
     <img src={DBA.src} alt="" />
     <div class="content">
       <h1>DBA - Redesign</h1>
-      <p>&#8594 Deveopler</p>
+      <ul>
+        <li>&#8594 Deveopler</li>
+      </ul>
       <p><strong>Løsning:</strong> <a href="https://dba-redesign.netlify.app/">DBA Redesign</a></p>
     </div>
   </div>
@@ -15,6 +17,13 @@ import DBA from "../assets/images/dba-redesign.png";
 
 <style>
   @layer components {
+    ul {
+      padding: 0;
+      li {
+        list-style: none;
+        font-size: 1.15rem;
+      }
+    }
     img {
       border-radius: 10px;
       box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
@@ -28,7 +37,6 @@ import DBA from "../assets/images/dba-redesign.png";
 
     .content {
       display: grid;
-      gap: 1rem;
       align-self: start;
     }
 
@@ -70,6 +78,10 @@ import DBA from "../assets/images/dba-redesign.png";
     @media (width > 600px) {
       .card-wrapper {
         padding-block: 8rem;
+      }
+
+      .content {
+        gap: 1rem;
       }
 
       .card:has(img) {

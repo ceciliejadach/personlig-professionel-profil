@@ -1,0 +1,43 @@
+---
+
+---
+
+<section>
+  <div>
+    <h2 class="text">Kontakt mig</h2>
+  </div>
+</section>
+
+<style>
+  @layer components {
+    div {
+      grid-column: full;
+
+      h2 {
+        padding-block: 10rem;
+        text-align: center;
+      }
+    }
+  }
+</style>
+
+<script>
+  import { gsap } from "gsap";
+  import { ScrollTrigger } from "gsap/ScrollTrigger";
+  gsap.registerPlugin(ScrollTrigger);
+
+  let mm = gsap.matchMedia();
+
+  gsap.to(".text", {
+    scrollTrigger: {
+      trigger: ".text",
+      start: "top center",
+      end: "+=300",
+
+      scrub: 1,
+    },
+    scale: 2,
+    ease: "power2",
+    duration: 20,
+  });
+</script>
