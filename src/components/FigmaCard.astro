@@ -1,0 +1,139 @@
+---
+import ImgOne from "../assets/images/img-1.png";
+import ImgTwo from "../assets/images/img-2.png";
+import ImgThree from "../assets/images/img-3.png";
+import ImgFour from "../assets/images/img-4.png";
+---
+
+<div class="container">
+  <div class="card-wrapper">
+    <div class="card">
+      <figure>
+        <img src={ImgOne.src} alt="" />
+        <!-- <img src={ImgFour.src} alt="" />
+        <img src={ImgThree.src} alt="" /> -->
+        <img src={ImgTwo.src} alt="" />
+      </figure>
+      <div class="content">
+        <h1>Implementer Figma Design</h1>
+        <div>
+          <ul>
+            <li>&#8594 Developer</li>
+          </ul>
+        </div>
+        <p><strong>Løsning:</strong> <a href="https://implementer-et-figma-design.netlify.app/">Implementering af Figma Design</a></p>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    @layer components {
+      ul {
+        padding: 0;
+        li {
+          list-style: none;
+        }
+      }
+      img {
+        border-radius: 10px;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+      }
+      .container {
+        padding-block: 2rem;
+      }
+      .card-wrapper {
+        container-type: inline-size;
+        /* padding-block: 4rem; */
+        grid-column: full;
+      }
+
+      .content {
+        display: grid;
+        gap: 1rem;
+        align-self: start;
+
+        div {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 1rem;
+        }
+      }
+
+      figure {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+
+        & :first-child {
+          grid-column: 1/3;
+        }
+
+        /* & :nth-child(2) {
+          grid-column: 1/2;
+        }
+        & :nth-child(3) {
+          grid-column: 2/3;
+        } */
+
+        & :nth-child(2) {
+          grid-column: 1/3;
+        }
+      }
+    }
+
+    .card:has(img) {
+      display: grid;
+      gap: 1rem;
+
+      @container (width > 600px) {
+        grid-template-columns: 1fr 3fr;
+
+        .card-wrapper {
+          display: grid;
+        }
+
+        .content {
+          order: -1;
+        }
+      }
+    }
+
+    a {
+      text-decoration: none;
+      color: var(--blue);
+      padding-right: 30px;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        height: 0.7px;
+        background: var(--blue);
+        left: 0;
+        bottom: 0;
+        width: 0;
+        transition: width 0.2s;
+      }
+
+      &:hover:after {
+        width: 100%;
+      }
+    }
+
+    @media (width > 500px) {
+      figure {
+        &::before {
+          bottom: -5%;
+        }
+      }
+
+      .container {
+        padding-block: 8rem;
+      }
+
+      .card:has(img) {
+        gap: 3rem;
+      }
+    }
+  </style>
+</div>

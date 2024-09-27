@@ -1,34 +1,16 @@
 ---
-import DBA from "../assets/images/dba-redesign.png";
-import SmallCard from "../components/SmallCard.astro";
-import MediumCard from "../components/MediumCard.astro";
-import BigCard from "../components/BigCard.astro";
+import DBACard from "./DBACard.astro";
+import FigmaCard from "./FigmaCard.astro";
+import ITMVCard from "../components/ITMVCard.astro";
+import VildMadCard from "../components/VildMadCard.astro";
 ---
 
-<div class="wrapper">
-  <div>
-    <BigCard img={DBA.src} text="DBA - Redesign" buttontext="Deveopler" link="https://dba-redesign.netlify.app" paragraph="DBA redesign" />
-  </div>
-  <div>
-    <MediumCard text="I Tråd Med Verden - Webfeature" link="https://itmv-projekt.netlify.app" paragraph="Webfeature" />
-  </div>
-  <div>
-    <SmallCard text="Vild Mad - Sanke app" buttontext="Digital Designer" buttontextSecond="UX Designer" buttontextThird="Deveopler" link="https://www.figma.com/design/UG3ISjU0LuEENJSu2VUa8q/VILD-MAD" paragraph="Figma Prototype" />
-  </div>
-</div>
+<DBACard />
+<FigmaCard />
+<ITMVCard />
+<VildMadCard />
 
 <style>
   @layer components {
-    /* html {
-      scroll-snap-type: y mandatory;
-    } */
-    .wrapper {
-      scroll-snap-type: y mandatory;
-    }
-
-    div {
-      scroll-snap-align: center;
-      scroll-snap-stop: always;
-    }
   }
 </style>
