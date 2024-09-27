@@ -2,11 +2,11 @@
 const { text, variant, size } = Astro.props;
 ---
 
-<!-- <a href={url}> -->
+
 <button class={variant + " " + size}>
   <p>{text}</p>
 </button>
-<!-- </a> -->
+
 
 <style>
   @layer components {
@@ -37,18 +37,11 @@ const { text, variant, size } = Astro.props;
     }
 
     .secondary {
-      /* background:
-        linear-gradient(var(--black), var(--black)) padding-box,
-        linear-gradient(to right, darkblue, oklch(70% 0.5 290)) border-box; */
       background: transparent;
       border-radius: 50em;
       border: 1px solid var(--purple);
     }
 
-    /* .secondary:hover {
-      background-color: var(--pale-yellow);
-      color: var(--black);
-    } */
 
     .tertiary {
       background:

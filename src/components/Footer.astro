@@ -30,11 +30,22 @@ import Portraet from "../assets/images/portraet.png";
       background-color: var(--blue);
       padding: 6rem 1rem;
 
-      .content {
-        display: flex;
-        flex-wrap: wrap;
-      }
+    
     }
+    .content {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 2rem;
+
+        & > div {
+          display: flex;
+flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          gap: 1rem;
+        }
+      }
 
     img {
       max-width: 200px;
@@ -45,6 +56,7 @@ import Portraet from "../assets/images/portraet.png";
 
     .flex {
       display: flex;
+      gap: 1rem;
     }
 
     h2 {
@@ -58,9 +70,6 @@ import Portraet from "../assets/images/portraet.png";
     div {
       grid-column: content;
     }
-
-    @media {width > 600px} {
-    
-    }
+  
   }
 </style>
