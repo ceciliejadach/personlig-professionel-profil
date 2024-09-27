@@ -5,7 +5,7 @@ import Portraet from "../assets/images/portraet.png";
 
 <section>
   <div class="content">
-      <img src={Portraet.src} alt="" />
+    <img src={Portraet.src} alt="" />
     <div>
       <h2>E-mail: Jadach95@hotmail.com</h2>
       <div class="flex">
@@ -29,23 +29,22 @@ import Portraet from "../assets/images/portraet.png";
     section {
       background-color: var(--blue);
       padding: 6rem 1rem;
-
-    
+      border-radius: 20px 20px 0 0;
     }
     .content {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        gap: 2rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
 
-        & > div {
-          display: flex;
-flex-direction: column;
-          justify-content: center;
-          align-items: center;
-          gap: 1rem;
-        }
+      & > div {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
       }
+    }
 
     img {
       max-width: 200px;
@@ -70,6 +69,5 @@ flex-direction: column;
     div {
       grid-column: content;
     }
-  
   }
 </style>
